@@ -12,6 +12,11 @@ $if(background-image)$
 \includegraphics[width=\paperwidth]{$background-image$}%
 }
 $endif$
+$if(italicquotes)$
+\let\quoteOld\quote
+\let\endquoteOld\endquote
+\renewenvironment{quote}{\quoteOld\itshape}{\endquoteOld}
+$endif$
 \usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
